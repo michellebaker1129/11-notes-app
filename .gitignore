@@ -2,3 +2,5 @@ node_modules
 package-lock.json
 .vscode
 .DS_Store
+
+*//never send node modules to Heroku or github, just with us

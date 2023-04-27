@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const {readFile, writeFile} = require("fs/promises");
 const getNotes = () => {
     return readFile("db/db.json", "utf8").then(notes => [].concat(JSON.parse(notes)))
@@ -17,7 +17,7 @@ app.get("/notes", (req, res) => {
 })
 app.get("/api/notes", (req, res) => {
     console.log("hit api route");
-    getNotes().then(notes => res.json(notes))
+    getNotes().then(notes => res.json(notes)).catch(err => res.json(err))
 }) 
 app.post("/api/notes", (req, res) => {
     getNotes().then(oldNotes => {
@@ -28,7 +28,7 @@ app.post("/api/notes", (req, res) => {
         writeFile("db/db.json", JSON.stringify(newArray)).then(() => res.json({
             msg: "okay"
         }))
-    })
+    }).catch(err => res.json(err))
 })
 app.delete("/api/notes/:id", (req, res) => {
     getNotes().then(unfilteredNotes => {
@@ -36,6 +36,6 @@ app.delete("/api/notes/:id", (req, res) => {
         writeFile("db/db.json", JSON.stringify(filteredNotes)).then(() => res.json({
             msg: "okay"
         }))
-    })
+    }).catch(err => res.json(err))
 })
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`) );
