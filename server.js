@@ -36,6 +36,6 @@ app.delete("/api/notes/:id", (req, res) => {
         writeFile("db/db.json", JSON.stringify(filteredNotes)).then(() => res.json({
             msg: "okay"
         }))
-    }).catch(err => res.json(err))
+    })
 })
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`) );
