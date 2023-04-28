@@ -1,4 +1,17 @@
-# 11-notes-app
+# Notes App
+
+## Table of Contents
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Credits](#Credits)
+- [License](#License)
+- [Badges](#Badges)
+
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+### Description
 
 User Story
 
@@ -21,3 +34,18 @@ WHEN I click on an existing note in the list in the left-hand column
 THEN that note appears in the right-hand column
 WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+
+### Installation
+Just click here [Notes App](https://sheltered-sierra-40668.herokuapp.com/notes).
+
+### Usage
+Keep track of your TODO list here! Every small business owner needs one. 
+
+
+### Credits
+- UC Berkeley Coding Bootcamp, (https://bootcamp.berkeley.edu/coding/)
+- Corey Yates, Tutor Extraordinaire (https://www.linkedin.com/in/corey-yates-codes/)
+- Josiah Rooney, Master Mentor (https://www.linkedin.com/in/josiahrooney/)
+
+### License
+GPL 
